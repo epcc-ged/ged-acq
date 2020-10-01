@@ -18,7 +18,13 @@ $(document).ready(function(){
 			else {
 				$(".segment").hide();
 				$territoire = $('#filtre_territoire').val();
-				$('[class^=".segment.' + $territoire + '"]').show();
+				$maClasseSegmentStarter = "segment " + $territoire;
+				$(".segment").each(function(){
+					$maClasse = $(this).attr('class');
+					if ($maClasse.startsWith($maClasseSegmentStarter))
+						$(this).show();
+				});
+				//$("[class^='.segment." + $territoire + "']").show();
 			}
 		}
 	});
@@ -49,7 +55,13 @@ $(document).ready(function(){
 			$('#filtre_segment option[value="Tous"]').show();
 			$('#filtre_segment option[value="Tous"]').prop('disabled', false);
 			$('#filtre_segment option[value="Tous"]').prop('selected', true);
-			$('[class^=".segment.' + $territoire + '"]').show();
+			$maClasseSegmentStarter = "segment " + $territoire;
+			$(".segment").each(function(){
+				$maClasse = $(this).attr('class');
+				if ($maClasse.startsWith($maClasseSegmentStarter))
+					$(this).show();
+			});
+			//$('[class^=".segment.' + $territoire + '"]').show();
 			// On cache toute la liste de résultat en attendant que l'utilisateur
 			// ait fait son choix.
 		}
