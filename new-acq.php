@@ -200,7 +200,7 @@ width: 100%;
   <h1>Nouvelles acquisitions du Grand équipement documentaire (GED)</h1>
   <?php 
     $dfin = new DateTime('-1 day');
-    $ddeb = new DateTime('-31 day');
+    $ddeb = new DateTime('-61 day');
     echo "<p class='info'>Ouvrages réceptionnés entre le " . $ddeb->format('d/m/Y') . " et le " . $dfin->format('d/m/Y');
   ?>
   <?php
